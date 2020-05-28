@@ -6,4 +6,26 @@ class Api::ExamplesController < ApplicationController
     render "query_params.json.jb"
   end
 
+  def query_name_action
+    name = params["name"].upcase
+    @message = "You name is #{name}"
+    if name.starts_with?("A")
+      @message = "Hey you name starts with an A, #{name}!"
+    end
+    render "query_name.json.jb"
+  end
+
+  def query_guess_action
+    @user_guess = params["guess"].to_i
+    winning_number = 36
+    if @user_guess > winning_number
+      @message = "Guess lower!"
+    elsif @user_guess < winning_number
+      @message = "Guess higher!"
+    else
+      @message = "You win!"
+    end
+    render "query_guess.json.jb"
+  end
+
 end
