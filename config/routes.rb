@@ -7,5 +7,7 @@ Rails.application.routes.draw do
     get "/query_params_url" => "examples#query_params_action"
     get "/query_name_url" => "examples#query_name_action"
     get "/query_guess_url" => "examples#query_guess_action"
+
+    get "/segment_params_url/:wildcard" => "examples#segment_params_action"
   end
 end
