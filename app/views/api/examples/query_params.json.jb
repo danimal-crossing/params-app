@@ -1,0 +1,4 @@
+{
+  message: @message,
+  second_message: @second_message
+}
