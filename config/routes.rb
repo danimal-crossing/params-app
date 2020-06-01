@@ -10,5 +10,7 @@ Rails.application.routes.draw do
 
     get "/segment_params_url/:wildcard" => "examples#segment_params_action"
     get "/segment_guess_url/:guess" => "examples#query_guess_action"
+
+    post "/body_params_url" => "examples#body_params_action"
   end
 end
